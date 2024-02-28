@@ -5,6 +5,7 @@ from django.utils.html import format_html
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ("id", "title", "category", "preview", "image", "created_at", "is_published")
+    list_display_links = ("id", "title")
 
     def preview(self, obj):
         return format_html(f"<img width=50 height=50 src='{obj.image.url}'")

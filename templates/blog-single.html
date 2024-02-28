@@ -7,9 +7,9 @@
                 <div class="col-md-12 col-lg-8 main-content">
                     <h1 class="mb-4">{{ post.title }}</h1>
                     <div class="post-meta">
-                        <span class="category">{{ post.category }}</span>
+                        <a href="/blog?cat={{ post.category.id }}"><span class="category">{{ post.category }}</span></a>
                         <span class="mr-2">{{ post.created_at }} </span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> {{ message|length }}</span>
+                        <span class="ml-2"><span class="fa fa-comments"></span> {{ comments|length }}</span>
                     </div>
                     <div class="post-content-body">
                         <p>{{ post.description }}</p>
@@ -138,26 +138,8 @@
                         <h3 class="heading">Categories</h3>
                         <ul class="categories">
                             {% for category in categories %}
-                                <li><a href="#">{{ category.name }} <span></span></a></li>
+                                <li><a href="/blog/?cat={{ category.id }}">{{ category.name }}</a></li>
                             {% endfor %}
-                        </ul>
-                    </div>
-
-                    <div class="sidebar-box">
-                        <h3 class="heading">Tags</h3>
-                        <ul class="tags">
-                            <li><a href="#">Travel</a></li>
-                            <li><a href="#">Adventure</a></li>
-                            <li><a href="#">Food</a></li>
-                            <li><a href="#">Lifestyle</a></li>
-                            <li><a href="#">Business</a></li>
-                            <li><a href="#">Freelancing</a></li>
-                            <li><a href="#">Travel</a></li>
-                            <li><a href="#">Adventure</a></li>
-                            <li><a href="#">Food</a></li>
-                            <li><a href="#">Lifestyle</a></li>
-                            <li><a href="#">Business</a></li>
-                            <li><a href="#">Freelancing</a></li>
                         </ul>
                     </div>
                 </div>

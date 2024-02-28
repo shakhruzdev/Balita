@@ -44,8 +44,7 @@
                                         <span class="text">
                                         <div class="post-meta">
                                             <span class="category">{{ post.category }}</span>
-                                            <span class="mr-2">{{ post.created_at }} </span> &bullet;
-                                            <span class="ml-2"><span class="fa fa-comments"></span> {{ message|length }}</span>
+                                            <span class="mr-2">{{ post.created_at }} </span>
                                         </div>  
                                         <h2>{{ post.title }}</h2>
                                     </span>
@@ -97,7 +96,7 @@
                                     repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit
                                     molestias
                                     minus.</p>
-                                <p><a href="/aboutr" class="btn btn-primary btn-sm">Read my bio</a></p>
+                                <p><a href="/about" class="btn btn-primary btn-sm">Read my bio</a></p>
                                 <p class="social">
                                     <a href="https://facebook.com/" class="p-2"><span class="fa fa-facebook"></span></a>
                                     <a href="https://twitter.com/" class="p-2"><span class="fa fa-twitter"></span></a>
@@ -157,26 +156,8 @@
                         <h3 class="heading">Categories</h3>
                         <ul class="categories">
                             {% for category in categories %}
-                                <li><a href="#">{{ category.name }} <span></span></a></li>
+                                <li><a href="/blog/?cat={{ category.id }}">{{ category.name }}</a></li>
                             {% endfor %}
-                        </ul>
-                    </div>
-
-                    <div class="sidebar-box">
-                        <h3 class="heading">Tags</h3>
-                        <ul class="tags">
-                            <li><a href="#">Travel</a></li>
-                            <li><a href="#">Adventure</a></li>
-                            <li><a href="#">Food</a></li>
-                            <li><a href="#">Lifestyle</a></li>
-                            <li><a href="#">Business</a></li>
-                            <li><a href="#">Freelancing</a></li>
-                            <li><a href="#">Travel</a></li>
-                            <li><a href="#">Adventure</a></li>
-                            <li><a href="#">Food</a></li>
-                            <li><a href="#">Lifestyle</a></li>
-                            <li><a href="#">Business</a></li>
-                            <li><a href="#">Freelancing</a></li>
                         </ul>
                     </div>
                 </div>

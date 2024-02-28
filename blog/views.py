@@ -23,13 +23,14 @@ def category_view(request):
     page = data.get("page", 1)
     categories = Category.objects.all()
     if cat:
-
         posts = Post.objects.filter(is_published=True, category__id=cat).order_by('-created_at')
     else:
         posts = Post.objects.filter(is_published=True).order_by('-created_at')
 
     page_obj = Paginator(posts, 6)
-    return render(request, 'category.html', context={'posts': page_obj.page(page), 'categories': categories})
+
+    return render(request, 'category.html',
+                  context={'posts': page_obj.page(page), 'categories': categories})
 
 
 def category_detail_view(request, pk):
