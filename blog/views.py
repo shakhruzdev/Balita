@@ -8,10 +8,12 @@ def index_view(request):
     page = request.GET.get("page", 1)
     categories = Category.objects.all()
     posts = Post.objects.filter(is_published=True).order_by('-created_at')[:8]
+    popular_posts = Post.objects.order_by('-views_count')[:5]
     page_obj = Paginator(posts, 6)
     d = {
         'posts': page_obj.page(page),
-        'categories': categories
+        'categories': categories,
+        'popular_posts': popular_posts
     }
 
     return render(request, 'index.html', context=d)

@@ -16,6 +16,7 @@ class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category')
     description = models.TextField()
     image = models.ImageField(upload_to="posts/")
+    views_count = models.IntegerField(default=0)
 
     is_published = models.BooleanField(default=True)
 
