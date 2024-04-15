@@ -57,6 +57,16 @@ def about_view(request):
     return render(request, 'about.html', context={'posts': page_obj.page(page), 'categories': categories})
 
 
+def blog_search_view(request):
+    text = request.GET.get('text', '')
+    text = text.replace('+', ' ')
+    if text:
+        posts = Post.objects.filter(title__icontains=text)
+    else:
+        posts = Post.objects.all()
+    return render(request, 'search_results.html', {'posts': posts, 'search_query': text})
+
+
 def contact_view(request):
     print("=" * 50)
     print(request.method)
