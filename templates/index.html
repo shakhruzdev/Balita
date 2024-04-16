@@ -99,7 +99,7 @@
                         <h3 class="heading">Popular Posts</h3>
                         <div class="post-entry-sidebar">
                             <ul>
-                                {% for post in posts|slice:':3' %}
+                                {% for post in post_list %}
                                     <li>
                                         <a href="/blog/{{ post.id }}/">
                                             <img src="{{ post.image.url }}" alt="Image placeholder" class="mr-4">
@@ -118,16 +118,6 @@
                 </div>
 
                 <div class="col-md-12 col-lg-4 sidebar">
-                    <div class="sidebar-box search-form-wrap">
-                        <form action="#" class="search-form">
-                            <div class="form-group">
-                                <span class="icon fa fa-search"></span>
-                                <input type="text" class="form-control" id="s"
-                                       placeholder="Type a keyword and hit enter">
-                            </div>
-                        </form>
-                    </div>
-
                     <div class="sidebar-box">
                         <div class="bio text-center">
                             <img src="{% static 'images/person_1.jpg' %}" alt="Image Placeholder" class="img-fluid">
@@ -154,7 +144,7 @@
                         <h3 class="heading">Popular Posts</h3>
                         <div class="post-entry-sidebar">
                             <ul>
-                                {% for post in posts|slice:':3' %}
+                                {% for post in post_list|slice:':3' %}
                                     <li>
                                         <a href="/blog/{{ post.id }}/">
                                             <img src="{{ post.image.url }}" alt="Image placeholder" class="mr-4">
